@@ -1,9 +1,25 @@
 import changePage from "../functions/ChangePage";
+import React from 'react';
 
-function HomePage(props) {
-    return ( <div className='home_page'>
-            <div className='home_page-hello-message' onClick={changePage}> {props.title}</div>
-        </div> );
+class HomePage extends React.Component {
+
+    state={bool: true}
+
+    changeInitialPage(){
+      const background = document.getElementById(this.props.props[1].homeScreenId);
+      background.className = 'home_page-dark' ? background.className = 'home_page-light': null;
+      this.setState({
+         bool: false
+      });
+    }
+
+    render(){
+        return (
+            <div id='home-screen' className='home_page-dark'>
+                { this.state.bool ? <div id='hello-message' className='home_page-hello-message' onClick={()=> this.changeInitialPage(this.state.bool)}> {this.props.props[0].title} </div> : null }
+            </div> 
+        )
+    }
 }
 
 export default HomePage;

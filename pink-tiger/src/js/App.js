@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <HomePage title={'hello, click here to continue'}/>
+      <HomePage props={[{title:'hello, click here to continue'}, {homeScreenId:'home-screen'}, {greetingMessageId:'hello-message'}]} />
     </div>
   );
 }
