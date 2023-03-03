@@ -5,6 +5,7 @@ class HomePage extends React.Component {
         super()
         this.state={ 
             bool: true,
+            desBool: true,
             isLoaded: false,
             content: {},
         }
@@ -38,19 +39,25 @@ class HomePage extends React.Component {
 
     nasaImg(){
         return (
-            <div>
+            <div className='home_page-img-block'>
                 <p className='home_page-nasa-img-des'>{this.state.content.title}</p>
-                <img className='home_page-nasa-img' src={this.state.content.url}/>
+                <img alt='nasa-img' className='home_page-nasa-img' src={this.state.content.url}/>
+                {this.state.desBool ?  <p className='home_screen-showDes-button' onClick={()=> this.showDesc()}> Want to learn more? Click me </p> : <p className='home_page-explanation'>{this.state.content.explanation}</p> }            
             </div>
         )
+    }
+
+    showDesc() {
+        return this.setState({
+            desBool: false
+        })
     }
 
     render(){
         return (
             <div id='home-screen' className='home_page-dark'>
-               {this.state.isLoaded ? <div>loading</div> : this.state.bool ? <div id='hello-message' className='home_page-hello-message' onClick={()=> this.changeInitialPage(this.state.bool)}> {this.props.props[0].title} </div> : this.nasaImg()}
-                {/* { this.state.bool ? <div id='hello-message' className='home_page-hello-message' onClick={()=> this.changeInitialPage(this.state.bool)}> {this.props.props[0].title} </div> : this.nasaImg()} */}
-            </div> 
+               {this.state.isLoaded ? <div>loading</div> : this.state.bool ? <div id='hello-message' className='home_page-hello-message' onClick={()=> this.changeInitialPage()}> {this.props.props[0].title} </div> : this.nasaImg()}
+               </div> 
         )
     }
 }
