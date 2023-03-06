@@ -1,5 +1,15 @@
+import SideBarChild from "./SideBarChild";
+
 function SideBar() {
-    return ( <>hello</> );
-}
+    return ( <div className='side-bar'>
+       <SideBarChild />
+       <SideBarChild />
+       <SideBarChild />
+       <SideBarChild />
+       <SideBarChild />
+       <SideBarChild />
+       <SideBarChild />
+    </div> );
+} 
 
 export default SideBar;
