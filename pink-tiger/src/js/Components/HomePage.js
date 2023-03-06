@@ -1,5 +1,4 @@
 import React from 'react';
-import SideBar from './SideBar';
 
 class HomePage extends React.Component {
     constructor(){
@@ -41,7 +40,6 @@ class HomePage extends React.Component {
     nasaImg(){
         return (
             <div className='home_page-img-block'>
-                {SideBar}
                 <p className='home_page-nasa-img-des'>{this.state.content.title}</p>
                 <img alt='nasa-img' className='home_page-nasa-img' src={this.state.content.url}/>
                 {this.state.desBool ?  <p className='home_screen-showDes-button' onClick={()=> this.showDesc()}> Want to learn more? Click me </p> : <p className='home_page-explanation'>{this.state.content.explanation}</p> }            
