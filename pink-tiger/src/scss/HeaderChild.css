@@ -1,0 +1,6 @@
+.header-child {
+    border: lightblue 2PX solid;
+    width: 20%;
+    min-height: 10vh;
+    margin: 5px;
+}
