@@ -56,8 +56,8 @@ class PhotoDisplayer extends React.Component {
     render(){
         return (
             <div id='home-screen' className='home_page-dark'>
-               {this.state.isLoaded ? <div>loading</div> : this.state.bool ? <div id='hello-message' className='home_page-hello-message' onClick={()=> this.changeInitialPage()}> {this.props.props[0].title} </div> : this.nasaImg()}
-               </div> 
+            {this.state.isLoaded ? <div>loading</div> : this.state.bool ? <div id='hello-message' className='home_page-hello-message' onClick={()=> this.changeInitialPage()}> {this.props.props[0].title} </div> : this.nasaImg()}
+            </div> 
         )
     }
 }
