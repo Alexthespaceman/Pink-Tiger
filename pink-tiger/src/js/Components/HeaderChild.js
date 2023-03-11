@@ -1,5 +1,5 @@
-function HeaderChild() {
-    return ( <div className='header-child'></div> );
+function HeaderChild(props) {
+    return ( <div className='header-child'>{props.titleText}</div> );
 }
 
 export default HeaderChild;
